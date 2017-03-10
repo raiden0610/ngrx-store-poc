@@ -1,0 +1,13 @@
+<div *ngFor="let item of items" >
+  <div>
+    <h2 (click)="selected.emit(item)">{{item.name}}</h2>
+  </div>
+  <div>
+    {{item.description}}
+  </div>
+  <div>
+    <button (click)="deleted.emit(item); $event.stopPropagation();">
+          <i class="material-icons">close</i>
+        </button>
+  </div>
+</div>

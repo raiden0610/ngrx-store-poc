@@ -1,3 +1,10 @@
 <h1>
   {{title}}
 </h1>
+
+<div>
+  <app-itemslist [items]="items | async" (selected)="selectItem($event)" (deleted)="deleteItem($event)"></app-itemslist>
+</div>
+<div>
+  <app-itemdetails [item]="selectedItem | async" (saved)="saveItem($event)" (cancelled)="resetItem($event)"></app-itemdetails>
+</div>

@@ -1,0 +1,20 @@
+<div>
+  <div>
+    <h2 *ngIf="selectedItem.id">Editing {{originalName}}</h2>
+    <h2 *ngIf="!selectedItem.id">Create New Item</h2>
+  </div>
+  <div>
+    <form [formGroup]="itemForm" novalidate>
+      <div class="form-group">
+        <label class="center-block">Item Name</label>
+        <input class="form-control" formControlName="name" placeholder="Enter a name" type="text">
+      </div>
+      <div class="form-group">
+        <label class="center-block">Item Description</label>
+        <input class="form-control" formControlName="description" placeholder="Enter a description" type="text">
+      </div>
+      <button type="button" (click)="cancel($event)">Cancel</button>
+      <button type="submit" (click)="save($event)">Save</button>
+    </form>
+  </div>
+</div>
